@@ -30,7 +30,9 @@ app.use('/api/admin', adminRoutes); // Register admin routes
 app.use('/api/items', itemRoutes); // Use the items API
 app.use('/auth', authRoutes); // Use the items API
 app.use('/api/contact', contactRoute);
-
+app.get("/" ,(req,res) => {
+  res.json("hello");
+})
 // Start the server on a specific port
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
