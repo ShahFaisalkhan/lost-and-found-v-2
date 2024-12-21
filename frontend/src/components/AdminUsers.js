@@ -13,8 +13,8 @@ const AdminUsers = () => {
   const fetchUsers = async (page = 1) => {
     try {
       const token = localStorage.getItem('token');
-      const { data } = await axios.get('http://localhost:5000/api/admin/users', {
-        // const { data } = await axios.get('/api/admin/users', {
+      // const { data } = await axios.get('http://localhost:5000/api/admin/users', {
+        const { data } = await axios.get('https://lost-and-found-backend-sigma.vercel.app/api/admin/users', {
         headers: { Authorization: `Bearer ${token}` },
         params: { page, limit: 36 }, // Pass pagination parameters
       });
@@ -54,8 +54,8 @@ const AdminUsers = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/admin/users/${userId}`, {
-        // await axios.delete(`/api/admin/users/${userId}`, {
+      // await axios.delete(`http://localhost:5000/api/admin/users/${userId}`, {
+        await axios.delete(`https://lost-and-found-backend-sigma.vercel.app/api/admin/users/${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -70,8 +70,8 @@ const AdminUsers = () => {
   const handlePromote = async (userId) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.patch(`http://localhost:5000/api/admin/users/${userId}/promote`, {}, {
-        // await axios.patch(`/api/admin/users/${userId}/promote`, {}, {
+      // await axios.patch(`http://localhost:5000/api/admin/users/${userId}/promote`, {}, {
+        await axios.patch(`https://lost-and-found-backend-sigma.vercel.app/api/admin/users/${userId}/promote`, {}, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -86,8 +86,8 @@ const AdminUsers = () => {
   const handleDemote = async (userId) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.patch(`http://localhost:5000/api/admin/users/${userId}/demote`, {}, {
-        // await axios.patch(`/api/admin/users/${userId}/demote`, {}, {
+      // await axios.patch(`http://localhost:5000/api/admin/users/${userId}/demote`, {}, {
+        await axios.patch(`https://lost-and-found-backend-sigma.vercel.app/api/admin/users/${userId}/demote`, {}, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

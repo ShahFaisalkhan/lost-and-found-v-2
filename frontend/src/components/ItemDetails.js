@@ -11,8 +11,8 @@ const ItemDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/items/${id}`)
-      // .get(`/api/items/${id}`)
+      // .get(`http://localhost:5000/api/items/${id}`)
+      .get(`https://lost-and-found-backend-sigma.vercel.app/api/items/${id}`)
       .then((response) => setItem(response.data))
       .catch((error) => console.error('Error fetching item details:', error));
   }, [id]);
@@ -24,8 +24,8 @@ const ItemDetails = () => {
       <div className="item-details-card">
         {item.imageUrl ? (
           <img
-            src={`http://localhost:5000${item.imageUrl}`}
-            // src={`${item.imageUrl}`}
+            // src={`http://localhost:5000${item.imageUrl}`}
+            src={`https://lost-and-found-backend-sigma.vercel.app${item.imageUrl}`}
             alt={item.title}
             className="item-image"
           />

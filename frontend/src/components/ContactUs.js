@@ -22,8 +22,8 @@ const ContactUs = () => {
     setStatus('Submitting...'); // Show a temporary message
 
     try {
-      await axios.post('http://localhost:5000/api/contact', formData);
-      // await axios.post('/api/contact', formData);
+      // await axios.post('http://localhost:5000/api/contact', formData);
+      await axios.post('https://lost-and-found-backend-sigma.vercel.app/api/contact', formData);
       // Show success message
       setStatusType('success');
       setStatus('Thank you! Your message has been sent successfully.');

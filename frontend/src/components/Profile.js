@@ -16,8 +16,8 @@ const Profile = () => {
     const fetchProfile = async () => {
       try {
         const token = localStorage.getItem('token');
-        const { data } = await axios.get('http://localhost:5000/auth/me', {
-          // const { data } = await axios.get('/auth/me', {
+        // const { data } = await axios.get('http://localhost:5000/auth/me', {
+          const { data } = await axios.get('https://lost-and-found-backend-sigma.vercel.app/auth/me', {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -37,8 +37,8 @@ const Profile = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const { data } = await axios.put('http://localhost:5000/auth/profile', formData, {
-        // const { data } = await axios.put('/auth/profile', formData, {
+      // const { data } = await axios.put('http://localhost:5000/auth/profile', formData, {
+        const { data } = await axios.put('https://lost-and-found-backend-sigma.vercel.app/auth/profile', formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

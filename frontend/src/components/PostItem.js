@@ -39,8 +39,8 @@ const PostItem = () => {
 
       if (image) data.append('image', image);
       // Send POST request with the FormData and Authorization header
-      await axios.post('http://localhost:5000/api/items', data, {
-        // await axios.post('/api/items', data, {
+      // await axios.post('http://localhost:5000/api/items', data, {
+        await axios.post('https://lost-and-found-backend-sigma.vercel.app/api/items', data, {
         headers: {
           Authorization: `Bearer ${token}`, // Include token in the request
           'Content-Type': 'multipart/form-data',

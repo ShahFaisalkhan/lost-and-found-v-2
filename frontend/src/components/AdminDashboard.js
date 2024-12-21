@@ -15,8 +15,8 @@ const AdminDashboard = () => {
     const fetchMetrics = async () => {
       try {
         const token = localStorage.getItem('token'); // Admin token
-        const { data } = await axios.get('http://localhost:5000/api/admin/dashboard', {
-          // const { data } = await axios.get('/api/admin/dashboard', {
+        // const { data } = await axios.get('http://localhost:5000/api/admin/dashboard', {
+          const { data } = await axios.get('https://lost-and-found-backend-sigma.vercel.app/api/admin/dashboard', {
           headers: { Authorization: `Bearer ${token}` },
         });
         // console.log("Returned data in admin dashboard.js is",data)

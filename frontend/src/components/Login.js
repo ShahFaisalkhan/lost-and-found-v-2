@@ -12,8 +12,8 @@ const Login = ({ onLogin }) => {
   
     try {
       // Send login request to the backend
-      const response = await axios.post('http://localhost:5000/auth/login', formData);
-      // const response = await axios.post('/auth/login', formData);
+      // const response = await axios.post('http://localhost:5000/auth/login', formData);
+      const response = await axios.post('https://lost-and-found-backend-sigma.vercel.app/auth/login', formData);
       // On success
       alert(response.data.message); // Display success message from backend
       localStorage.setItem('token', response.data.token); // Save the token in local storage

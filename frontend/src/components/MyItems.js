@@ -16,8 +16,8 @@ const MyItems = () => {
         }
 
         // Fetch user's items with pagination
-        const { data } = await axios.get('http://localhost:5000/api/items/my-items', {
-          // const { data } = await axios.get('/api/items/my-items', {
+        // const { data } = await axios.get('http://localhost:5000/api/items/my-items', {
+          const { data } = await axios.get('https://lost-and-found-backend-sigma.vercel.app/api/items/my-items', {
           headers: { Authorization: `Bearer ${token}` },
            // Frontend: The params object in the axios.get request specifies the query parameters:
            //  This constructs a URL like: http://localhost:5000/api/items/my-items?page=1&limit=3
@@ -43,8 +43,8 @@ const MyItems = () => {
       }
 
       // Send DELETE request to the backend
-      await axios.delete(`http://localhost:5000/api/items/${id}`, {
-        // await axios.delete(`/api/items/${id}`, {
+      // await axios.delete(`http://localhost:5000/api/items/${id}`, {
+        await axios.delete(`https://lost-and-found-backend-sigma.vercel.app/api/items/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -65,8 +65,8 @@ const MyItems = () => {
           <div key={item._id} className="card mb-4">
             {item.imageUrl ? (
               <img
-                src={`http://localhost:5000${item.imageUrl}`}
-                // src={`${item.imageUrl}`}
+                // src={`http://localhost:5000${item.imageUrl}`}
+                src={`https://lost-and-found-backend-sigma.vercel.app${item.imageUrl}`}
                 alt={item.title}
                 className="card-img-top"
                 style={{
