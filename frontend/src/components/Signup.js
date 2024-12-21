@@ -12,8 +12,8 @@ const Signup = () => {
   e.preventDefault();
 
   try {
-    const response = await axios.post('http://localhost:5000/auth/signup', formData);
-    // const response = await axios.post('/auth/signup', formData);
+   // const response = await axios.post('http://localhost:5000/auth/signup', formData);
+    const response = await axios.post('https://lost-and-found-backend-sigma.vercel.app/auth/signup', formData);
     alert(response.data.message); // Success message from backend
     navigate('/login'); // Navigate to login on success
   } catch (error) {
