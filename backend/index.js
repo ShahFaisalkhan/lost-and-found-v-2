@@ -22,10 +22,10 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
   .catch(err => console.error('MongoDB connection error:', err));
 
 // Import routes
-const itemRoutes = require('../routes/items'); // API routes for items
-const authRoutes = require('../routes/auth'); // API routes for items
-const adminRoutes = require('../routes/admin');
-const contactRoute = require('../routes/contact');
+const itemRoutes = require('./routes/items'); // API routes for items
+const authRoutes = require('./routes/auth'); // API routes for items
+const adminRoutes = require('./routes/admin');
+const contactRoute = require('./routes/contact');
 app.use('/api/admin', adminRoutes); // Register admin routes
 app.use('/api/items', itemRoutes); // Use the items API
 app.use('/auth', authRoutes); // Use the items API
