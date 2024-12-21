@@ -98,7 +98,7 @@ const Home = () => {
             {item.imageUrl ? (
     <img
       // src={`http://localhost:5000${item.imageUrl}`}
-      src={`https://lost-and-found-backend-sigma.vercel.app/${item.imageUrl}`}
+      src={`https://lost-and-found-backend-sigma.vercel.app${item.imageUrl}`}
       alt={item.title}
       className="card-img-top"
       style={{ height: '200px', objectFit: 'cover' }}
