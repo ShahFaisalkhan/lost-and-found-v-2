@@ -34,8 +34,8 @@ const Home = () => {
       // console.log("query in home.js is",query)
       const queryString = query.join('&'); // Join the parts with "&" and converts it to string
       // console.log("query string in home.js is",queryString)
-      const { data } = await axios.get(`http://localhost:5000/api/items?${queryString}`);
-      // const { data } = await axios.get(`/api/items?${queryString}`);
+      // const { data } = await axios.get(`http://localhost:5000/api/items?${queryString}`);
+      const { data } = await axios.get(`https://lost-and-found-backend-sigma.vercel.app/api/items?${queryString}`);
 
         // const { data } = await axios.get(`http://localhost:5000/api/items?${query}`);
         setItems(data.items || []);
@@ -97,8 +97,8 @@ const Home = () => {
             /> */}
             {item.imageUrl ? (
     <img
-      src={`http://localhost:5000${item.imageUrl}`}
-      // src={`${item.imageUrl}`}
+      // src={`http://localhost:5000${item.imageUrl}`}
+      src={`https://lost-and-found-backend-sigma.vercel.app${item.imageUrl}`}
       alt={item.title}
       className="card-img-top"
       style={{ height: '200px', objectFit: 'cover' }}
