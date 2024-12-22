@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL; // Dynamic base URL
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ const Signup = () => {
 
   try {
    // const response = await axios.post('http://localhost:5000/auth/signup', formData);
-    const response = await axios.post('https://lost-and-found-v-2-backend.vercel.app/auth/signup', formData);
+    const response = await axios.post('${API_BASE_URL}/auth/signup', formData);
     alert(response.data.message); // Success message from backend
     navigate('/login'); // Navigate to login on success
   } catch (error) {
