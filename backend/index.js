@@ -12,7 +12,7 @@ const app = express(); // Initialize Express app
 app.use(cors()); // Enable CORS for all routes
 // Allow requests from your frontend's URL
 const corsOptions = {
-  origin: 'https://lost-and-found-navy-alpha.vercel.app', // Your frontend's URL
+  origin: 'https://lost-and-found-orpin.vercel.app/', // Your frontend's URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
   credentials: true, // Allow cookies if needed
 };
