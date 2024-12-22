@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL; // Dynamic base URL
 
 const Login = ({ onLogin }) => {
   const navigate = useNavigate();
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL; // Dynamic base URL
   const [formData, setFormData] = useState({ email: '', password: '' });
 
   // Handle form submission
