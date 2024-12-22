@@ -11,11 +11,11 @@ dotenv.config(); // Load environment variables
 const app = express(); // Initialize Express app
 app.use(cors()); // Enable CORS for all routes
 // Allow requests from your frontend's URL
-// const corsOptions = {
-//   origin: 'https://lost-and-found-navy-alpha.vercel.app', // Your frontend's URL
-//   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
-//   credentials: true, // Allow cookies if needed
-// };
+const corsOptions = {
+  origin: 'https://lost-and-found-navy-alpha.vercel.app', // Your frontend's URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+  credentials: true, // Allow cookies if needed
+};
 app.use(bodyParser.json()); // Parse JSON data from requests
 app.use(express.json()); // Parses JSON payloads
 app.use(express.urlencoded({ extended: true })); // Parses URL-encoded payloads
