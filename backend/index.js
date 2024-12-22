@@ -10,11 +10,6 @@ dotenv.config(); // Load environment variables
 
 const app = express(); // Initialize Express app
 app.use(cors()); // Enable CORS for all routes
-app.use(cors({
-  origin: [""],
-  methods: ["POST", "GET"],
-  credentials: true
-}));
 app.use(bodyParser.json()); // Parse JSON data from requests
 app.use(express.json()); // Parses JSON payloads
 app.use(express.urlencoded({ extended: true })); // Parses URL-encoded payloads
