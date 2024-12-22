@@ -1,43 +1,42 @@
 // File: backend/routes/items.js
 const express = require('express');
 const app = express();
-// const multer = require('../utils/multerConfig'); // Import Multer configuration
+const multer = require('../utils/multerConfig'); // Import Multer configuration
 const Item = require('../models/Item');
 const jwt = require('jsonwebtoken');
 
 const router = express.Router();
 
-const cloudinary = require('cloudinary').v2;
-const { CloudinaryStorage } = require('multer-storage-cloudinary');
-const multer = require('multer');
+// const cloudinary = require('cloudinary').v2;
+// const { CloudinaryStorage } = require('multer-storage-cloudinary');
+// const multer = require('multer');
 
-// Configure Cloudinary
-cloudinary.config({
-  // cloud_name: process.env.CLOUDINARY_CLOUD_NAME,  Replace with your Cloudinary cloud name
-  cloud_name: dq1vugfow, // Replace with your Cloudinary cloud name
+// // Configure Cloudinary
+// cloudinary.config({
+//   // cloud_name: process.env.CLOUDINARY_CLOUD_NAME,  Replace with your Cloudinary cloud name
+//   cloud_name: dq1vugfow, // Replace with your Cloudinary cloud name
 
-  // api_key: process.env.CLOUDINARY_API_KEY,  Replace with your API key
-  api_key: 415963984864831, // Replace with your API key
+//   // api_key: process.env.CLOUDINARY_API_KEY,  Replace with your API key
+//   api_key: 415963984864831, // Replace with your API key
 
-  // api_secret: process.env.CLOUDINARY_API_SECRET,  Replace with your API secret
-  api_secret: JIzkc0zZS3i36B0YlXfdSgt6Hao, // Replace with your API secret
+//   // api_secret: process.env.CLOUDINARY_API_SECRET, // Replace with your API secret
+//   api_secret: JIzkc0zZS3i36B0YlXfdSgt6Hao, // Replace with your API secret
 
-});
+// });
 
 // Set up Multer storage for Cloudinary
-const storage = new CloudinaryStorage({
-  cloudinary: cloudinary,
-  params: {
-    folder: 'lost-and-found', // Folder name in Cloudinary
-    allowed_formats: ['jpeg', 'png', 'jpg'], // Allowed file types
-  },
-});
+// const storage = new CloudinaryStorage({
+//   cloudinary: cloudinary,
+//   params: {
+//     folder: 'lost-and-found', // Folder name in Cloudinary
+//     allowed_formats: ['jpeg', 'png', 'jpg'], // Allowed file types
+//   },
+// });
 
-const upload = multer({ storage });
+// const upload = multer({ storage });
 
 // POST a new item with image upload
-// router.post('/', multer.single('image'), async (req, res) => {
-  router.post('/', upload.single('image'), async (req, res) => {
+router.post('/', multer.single('image'), async (req, res) => {
   const token = req.headers.authorization?.split(' ')[1];
   if (!token) {
     console.log('Missing token');
@@ -57,8 +56,7 @@ const upload = multer({ storage });
       date,
       isLost,
       contactNo,
-      // imageUrl: req.file ? `/uploads/${req.file.filename}` : '',
-      imageUrl: req.file ? req.file.path : '', // Save Cloudinary URL
+      imageUrl: req.file ? `/uploads/${req.file.filename}` : '',
       userId,
     });
 

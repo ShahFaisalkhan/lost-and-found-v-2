@@ -96,18 +96,13 @@ const Home = () => {
             alt={item.title}
             /> */}
             {item.imageUrl ? (
-    // <img
-    //   // src={`http://localhost:5000${item.imageUrl}`}
-    //   src={`https://lost-and-found-backend-sigma.vercel.app${item.imageUrl}`}
-    //   alt={item.title}
-    //   className="card-img-top"
-    //   style={{ height: '200px', objectFit: 'cover' }}
-    // />
     <img
-    src={item.imageUrl}
-    alt={item.title}
-    className="img-fluid"
-  />
+      // src={`http://localhost:5000${item.imageUrl}`}
+      src={`https://lost-and-found-backend-sigma.vercel.app${item.imageUrl}`}
+      alt={item.title}
+      className="card-img-top"
+      style={{ height: '200px', objectFit: 'cover' }}
+    />
   ) : (
     <div
       style={{
