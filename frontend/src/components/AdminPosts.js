@@ -75,6 +75,8 @@ const AdminPosts = () => {
       {/* Filters */}
       <div className="row mb-4">
         <div className="col-md-3">
+        <label htmlFor="startDate" className="form-label">Start Date</label>
+
           <input
             type="text"
             name="searchTerm"
@@ -85,6 +87,8 @@ const AdminPosts = () => {
           />
         </div>
         <div className="col-md-3">
+        <label htmlFor="startDate" className="form-label">Start Date</label>
+
           <select
             name="category"
             className="form-select"
