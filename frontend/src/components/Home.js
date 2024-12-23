@@ -76,19 +76,22 @@ const Home = () => {
           className="form-control"
           onChange={(e) => setFilters({ ...filters, date: e.target.value })}
         /> */}
-        <input
-  type="date"
-  className="form-control"
-  value={filters.date || ''} // Ensures empty value displays the placeholder
-  onChange={(e) => setFilters({ ...filters, date: e.target.value })} 
-  onFocus={(e) => e.target.placeholder = ''} // Clear placeholder on focus
-  onBlur={(e) => {
-    if (!e.target.value) {
-      e.target.placeholder = 'Search by date'; // Restore placeholder if no date is selected
-    }
-  }}
-  placeholder="Search by date"
-/>
+   <div className="form-group position-relative">
+  <input
+    type="date"
+    className="form-control"
+    value={filters.date || ''}
+    onChange={(e) => setFilters({ ...filters, date: e.target.value })}
+  />
+  {!filters.date && (
+    <label className="form-label position-absolute" style={{
+      top: '50%', left: '10px', transform: 'translateY(-50%)', color: '#aaa',
+      pointerEvents: 'none'
+    }}>
+      Search by date
+    </label>
+  )}
+</div>
         <input
              type="text"
             placeholder="Search by title or description"
