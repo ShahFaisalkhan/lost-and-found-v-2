@@ -98,7 +98,7 @@ const Home = () => {
     top: 50%;
     left: 10px;
     transform: translateY(-50%);
-    color: #212529e6; /* Dark text color */
+    color: #212529c4; /* Dark text color */
     pointer-events: none;
     display: none; /* Hide label by default */
   }
