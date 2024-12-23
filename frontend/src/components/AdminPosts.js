@@ -114,25 +114,31 @@ const AdminPosts = () => {
             onChange={handleFilterChange}
           />
         </div> */}
-         <div className="col-md-3">
-    <input
-      type="date"
-      name="startDate"
-      className="form-control"
-      value={filters.startDate}
-      onChange={handleFilterChange}
-      placeholder="Start Date" // Placeholder for start date
-    />
+     <div className="col-md-3">
+    <div className="form-group">
+      <label htmlFor="startDate" className="form-label">Start Date</label>
+      <input
+        type="date"
+        id="startDate"
+        name="startDate"
+        className="form-control"
+        value={filters.startDate}
+        onChange={handleFilterChange}
+      />
+    </div>
   </div>
   <div className="col-md-3">
-    <input
-      type="date"
-      name="endDate"
-      className="form-control"
-      value={filters.endDate}
-      onChange={handleFilterChange}
-      placeholder="End Date" // Placeholder for end date
-    />
+    <div className="form-group">
+      <label htmlFor="endDate" className="form-label">End Date</label>
+      <input
+        type="date"
+        id="endDate"
+        name="endDate"
+        className="form-control"
+        value={filters.endDate}
+        onChange={handleFilterChange}
+      />
+    </div>
   </div>
   
       </div>
