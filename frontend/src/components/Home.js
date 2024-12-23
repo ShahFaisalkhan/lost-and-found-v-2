@@ -98,7 +98,8 @@ const Home = () => {
     top: 50%;
     left: 10px;
     transform: translateY(-50%);
-    color: #aaa;
+    color: #000; /* Dark text color */
+    font-weight: bold; /* Optional: Make it bold */
     pointer-events: none;
     display: none; /* Hide label by default */
   }
@@ -111,6 +112,7 @@ const Home = () => {
   }
   `}
 </style>
+
 
         <input
              type="text"
