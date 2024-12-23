@@ -71,12 +71,24 @@ const Home = () => {
           placeholder="Location"
           onChange={(e) => setFilters({ ...filters, location: e.target.value })}
         />
-        <input
+        {/* <input
           type="date"
           className="form-control"
-          placeholder="Search by date"
           onChange={(e) => setFilters({ ...filters, date: e.target.value })}
-        />
+        /> */}
+        <input
+  type="date"
+  className="form-control"
+  value={filters.date || ''} // Ensures empty value displays the placeholder
+  onChange={(e) => setFilters({ ...filters, date: e.target.value })} 
+  onFocus={(e) => e.target.placeholder = ''} // Clear placeholder on focus
+  onBlur={(e) => {
+    if (!e.target.value) {
+      e.target.placeholder = 'Search by date'; // Restore placeholder if no date is selected
+    }
+  }}
+  placeholder="Search by date"
+/>
         <input
              type="text"
             placeholder="Search by title or description"
