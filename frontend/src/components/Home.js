@@ -74,6 +74,7 @@ const Home = () => {
         <input
           type="date"
           className="form-control"
+          placeholder="Search by date"
           onChange={(e) => setFilters({ ...filters, date: e.target.value })}
         />
         <input
