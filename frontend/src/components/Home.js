@@ -99,7 +99,6 @@ const Home = () => {
     left: 10px;
     transform: translateY(-50%);
     color: #000; /* Dark text color */
-    font-weight: bold; /* Optional: Make it bold */
     pointer-events: none;
     display: none; /* Hide label by default */
   }
