@@ -113,9 +113,8 @@ const AdminPosts = () => {
             value={filters.endDate}
             onChange={handleFilterChange}
           />
-        </div>
-      </div> */}
-<div className="row">
+        </div> */}
+ 
   <div className="col-md-3 position-relative">
     <input
       type="date"
@@ -148,7 +147,7 @@ const AdminPosts = () => {
       </label>
     )}
   </div>
-</div>
+
 
 <style>
   {`
@@ -157,6 +156,7 @@ const AdminPosts = () => {
     left: 10px;
     transform: translateY(-50%);
     color: #000; /* Dark text for labels */
+    font-weight: bold; /* Optional: Make text bold */
     pointer-events: none;
     display: none; /* Hide by default */
   }
@@ -169,6 +169,9 @@ const AdminPosts = () => {
   }
   `}
 </style>
+
+
+      </div>
 
       {/* Posts */}
       {posts.length > 0 ? (
