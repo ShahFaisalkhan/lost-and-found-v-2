@@ -84,14 +84,34 @@ const Home = () => {
     onChange={(e) => setFilters({ ...filters, date: e.target.value })}
   />
   {!filters.date && (
-    <label className="form-label position-absolute" style={{
-      top: '50%', left: '10px', transform: 'translateY(-50%)', color: '#aaa',
-      pointerEvents: 'none'
-    }}>
+    <label
+      className="form-label position-absolute search-date-label"
+    >
       Search by date
     </label>
   )}
 </div>
+
+<style>
+  {`
+  .search-date-label {
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #aaa;
+    pointer-events: none;
+    display: none; /* Hide label by default */
+  }
+
+  /* Show label only on small screens */
+  @media (max-width: 768px) {
+    .search-date-label {
+      display: block;
+    }
+  }
+  `}
+</style>
+
         <input
              type="text"
             placeholder="Search by title or description"
