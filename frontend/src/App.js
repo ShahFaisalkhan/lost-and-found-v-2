@@ -74,9 +74,9 @@ const AppContent = () => {
       if (isLoggedIn && token && !isValidToken(token)) {
         handleTokenExpiration();
       }
-    }, 50000); // Check every 59 seconds
+    }, 50000); // Check every 50 seconds
   
-    // return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval); // Cleanup on unmount
   }, [token, isLoggedIn]);
   
   const handleTokenExpiration = () => {
