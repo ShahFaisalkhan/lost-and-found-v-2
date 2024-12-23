@@ -114,63 +114,27 @@ const AdminPosts = () => {
             onChange={handleFilterChange}
           />
         </div> */}
- 
-  <div className="col-md-3 position-relative">
+         <div className="col-md-3">
     <input
       type="date"
       name="startDate"
       className="form-control"
       value={filters.startDate}
       onChange={handleFilterChange}
+      placeholder="Start Date" // Placeholder for start date
     />
-    {!filters.startDate && (
-      <label
-        className="form-label position-absolute date-label start-date-label"
-      >
-        Start Date
-      </label>
-    )}
   </div>
-  <div className="col-md-3 position-relative">
+  <div className="col-md-3">
     <input
       type="date"
       name="endDate"
       className="form-control"
       value={filters.endDate}
       onChange={handleFilterChange}
+      placeholder="End Date" // Placeholder for end date
     />
-    {!filters.endDate && (
-      <label
-        className="form-label position-absolute date-label end-date-label"
-      >
-        End Date
-      </label>
-    )}
   </div>
-
-
-<style>
-  {`
-  .date-label {
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    color: #000; /* Dark text for labels */
-    font-weight: bold; /* Optional: Make text bold */
-    pointer-events: none;
-    display: none; /* Hide by default */
-  }
-
-  /* Show labels only on small screens */
-  @media (max-width: 768px) {
-    .date-label {
-      display: block;
-    }
-  }
-  `}
-</style>
-
-
+  
       </div>
 
       {/* Posts */}
